@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+  html {
+      scroll-behavior: smooth;
+      font-family: Prompt;
+  }
+</style>
+<body class="font-prompt scroll-smooth">
+    <nav class="fixed top-4 z-50 w-full flex flex-col items-center justify-center scroll-smooth">
+        <div class="flex w-full items-center justify-between overflow-y-hidden p-4 backdrop-blur-lg lg:m-2 lg:w-[50rem] lg:rounded-full lg:shadow-lg">
+            <a href="#"> logo</a>
+            <div class="hidden space-x-6 lg:flex">
+                <a href="#" data-scroll="section1" class="text-sm hover:opacity-50">Home</a>
+                <a href="#login" data-scroll="section2" class="text-sm border-l-2 border-neutral-300/20 pl-2 hover:opacity-50">Login</a>
+                <a href="#quiz" data-scroll="section3" class="text-sm border-l-2 border-neutral-300/20 pl-2 hover:opacity-50">About</a>
+                <a href="#" data-scroll="section3" class="text-sm border-l-2 border-neutral-300/20 pl-2 hover:opacity-50">Contact</a>
+
+            </div>
+            <div class="lg:hidden">
+                <button id="mobile-menu-button">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden w-full backdrop-blur-lg lg:hidden">
+            <a href="#" data-scroll="section1" class="block p-4 uppercase tracking-tighter hover:bg-gray-200">Home</a>
+            <a href="#" data-scroll="section2" class="block p-4 uppercase tracking-tighter hover:bg-gray-200">About</a>
+            <a href="#" data-scroll="section3" class="block p-4 uppercase tracking-tighter hover:bg-gray-200">Contact</a>
+        </div>
+    </nav>
+
+    <div class="flex relative w-screen h-screen items-center justify-center"  style="
+      background-image: url('./assets/10 SCENE.png'),url('./assets/5 SCENE.png');
+    background-repeat: no-repeat;
+    background-size: 500px 735px, 600px 600px;
+    background-position: 0% 0% ,100% 0%;/* Precise control for each image */
+  ">
+      <div class="flex flex-col items-start justify-center p-8 max-w-lg">
+        <h1 class="text-5xl font-bold tracking-tighter bg-gradient-to-b from-[#253364] to-[#0c40ea] text-transparent bg-clip-text leading-tight">
+          Unleash Your Inner Genius!
+        </h1>
+        <p class="text-lg tracking-tighter mt-4 text-[#050815] leading-relaxed ">
+          Embark on epic quiz adventures where every question brings you closer to unlocking awesome surprises! <br>
+          Ready to conquer the quiz galaxy?
+        </p>
+        <button class="bg-gradient-to-tr from-[#253364] to-[#0c40ea] text-white px-6 py-3 rounded-lg mt-6 transition-transform duration-300 hover:scale-105" onclick="scrollToSection('login')">
+        
+          Start Your Adventure
+        </button>
+      </div>
+    </div>
+<section class="bg-white dark:bg-gray-900 " id="login">
+    <div class="lg:grid sm:md:lg:h-fit lg:grid-cols-12 m:md:w-screen sm:md:grid md:grid-cols-8  sm:grid-cols-4">
+      <aside class="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
+        <img
+          alt=""
+          src="./assets/landscape/DrawKit Vector Illustration Landscape & Scenery (3).png"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+      </aside>
+  
+      <main
+        class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6" 
+      >
+        <div class="max-w-xl lg:max-w-3xl " >
+      
+          <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl text-transparent bg-gradient-to-tr  bg-clip-text from-[#253364] to-[#0c40ea] ">
+            Welcome to Quiz world
+          </h1>
+  
+          <p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
+            Challenge your mind, learn, and have fun! Join us to explore exciting quizzes and sharpen your skills.
+
+
+
+          </p>
+  
+          <form action="index.php" method="post" class="mt-8 grid grid-cols-6 gap-6" >
+            <div class="col-span-6">
+              <label for="FirstName" class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                Name
+              </label>
+              <input
+                type="text"
+                id="FirstName"
+                name="first_name"
+                class="mt-1 w-full rounded-md p-2 border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                required
+                pattern="[A-Za-z\s]{1,50}"  
+                placeholder="Enter your full name"
+              />
+            </div>
+            
+            <div class="col-span-6">
+              <label for="Email" class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                Email
+              </label>
+              <input
+                type="email"
+                id="Email"
+                name="email"
+                class="mt-1 w-full rounded-md p-2 border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                required
+                placeholder="Enter your email address"
+              />
+            </div>
+            
+            <div class="col-span-6">
+              <label for="Phone" class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="Phone"
+                name="phone"
+                class="mt-1 w-full p-2 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                required
+                pattern="^\+?[1-9]\d{1,14}$"  
+                placeholder="Enter your phone number"
+              />
+            </div>
+            
+            <!-- <div class="col-span-6">
+              <label for="Password" class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                Password
+              </label>
+              <input
+                type="password"
+                id="Password"
+                name="password"
+                class="mt-1 w-full p-2 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                required
+                minlength="8"  
+                placeholder="Enter your password"
+              />
+            </div>
+             -->
+            <div class="col-span-6">
+              <label for="MarketingAccept" class="flex gap-4">
+                <input
+                  type="checkbox"
+                  id="MarketingAccept"
+                  required
+                  name="marketing_accept"
+                  class="size-5 rounded-md p-2 border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:focus:ring-offset-gray-900"
+                />
+  
+                <span class="text-sm text-gray-700 dark:text-gray-200">
+                  I want to receive emails about events, product updates and company announcements.
+                </span>
+              </label>
+            </div>
+  
+            <div class="col-span-6">
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                By creating an account, you agree to our
+                <a href="#" id="terms-link" class="text-gray-700 underline dark:text-gray-200">
+                  terms and conditions
+                </a>
+                
+                and
+                <a href="#"  id="policy-link" class="text-gray-700 underline dark:text-gray-200"> privacy policy </a>.
+              </p>
+            </div>
+  
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button type="submit"
+                class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white"
+             >
+Proceed to quiz
+              </button>
+  
+            </div>
+          </form>
+          <dialog id="terms-dialog" class="w-[50%] p-3 rounded-md flex-col items-center justify-center  divide-y-2 ">
+            <h1>Terms and Conditions </h1>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit dolor doloremque magni harum eveniet sunt, corrupti voluptate, velit necessitatibus nihil possimus, eos illum ipsum nulla libero in perferendis sapiente tenetur.
+            </p>
+            <i id="close-dialog" class="fa-solid fa-xmark cursor-pointer mt-4 self-center text-center"></i>
+          </dialog>
+          
+          <dialog id="policy-dialog" class="w-[50%] p-4 rounded-md flex-col items-center justify-center divide-y-2 ">
+            <h1> Privacy policy </h1>
+            <p> 
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit dolor doloremque magni harum eveniet sunt, corrupti voluptate, velit necessitatibus nihil possimus, eos illum ipsum nulla libero in perferendis sapiente tenetur.
+            </p>
+            <i id="policy-close-dialog" class="fa-solid fa-xmark cursor-pointer mt-4 "></i>
+          </dialog>
+          
+        </div>
+      </main>
+      
+    </div>
+  </section>
+  <script src="index.js"> </script>
+</body>
+</html>
